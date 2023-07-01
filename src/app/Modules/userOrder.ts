@@ -1,5 +1,5 @@
 export class UserOrder {
-  orderId: number = 0;
+  orderId!: number;
   userId: number = 0;
   datePlaced: String = '';
   orderStatus: string = '';

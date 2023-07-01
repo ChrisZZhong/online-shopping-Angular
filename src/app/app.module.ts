@@ -8,6 +8,9 @@ import { LoginComponent } from './Components/Customer/login/login.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { RegisterComponent } from './Components/Customer/register/register.component';
 import { HomeComponent } from './Components/Customer/home/home.component';
+import { OrderDetailComponent } from './Components/Customer/order-detail/order-detail.component';
+import { ProductDetailComponent } from './Components/Customer/product-detail/product-detail.component';
+import { ProductsComponent } from './Components/Customer/products/products.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,9 @@ import { HomeComponent } from './Components/Customer/home/home.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
+    OrderDetailComponent,
+    ProductDetailComponent,
+    ProductsComponent,
   ],
   imports: [
     BrowserModule,

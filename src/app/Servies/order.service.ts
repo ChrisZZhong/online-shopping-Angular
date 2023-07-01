@@ -8,12 +8,22 @@ import {map, Observable} from 'rxjs';
 })
 export class OrderService {
 
-  baseUrl='http://localhost:8080/orders/all'
+  baseUrl='http://localhost:8080/orders/'
   constructor(private http:HttpClient) {}
 
   getAllOrders() : Observable<any>{
     return this.http.get<any>(
-      this.baseUrl);
+      this.baseUrl + "all");
+  }
+
+  getOrderDetails(orderId: any) {
+    return this.http.get<any>(
+      this.baseUrl + orderId);
+  }
+
+  cancelOrder(orderId: any) {
+    return this.http.patch(
+      this.baseUrl + orderId + "/cancel", null);
   }
 
 }

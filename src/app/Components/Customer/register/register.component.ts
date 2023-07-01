@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
 import {catchError, of} from "rxjs";
 import { RegisterService } from 'src/app/Servies/register.service';
 
@@ -13,7 +12,7 @@ import { RegisterService } from 'src/app/Servies/register.service';
 export class RegisterComponent {
   responseData: any;
 
-  constructor(public registerService: RegisterService, public router: Router) {
+  constructor(public registerService: RegisterService) {
   }
 
   ngOnInit(): void {}
