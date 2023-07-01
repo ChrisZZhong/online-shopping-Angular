@@ -12,6 +12,10 @@ import { OrderDetailComponent } from './Components/Customer/order-detail/order-d
 import { ProductDetailComponent } from './Components/Customer/product-detail/product-detail.component';
 import { ProductsComponent } from './Components/Customer/products/products.component';
 import { AdminHomeComponent } from './Components/Admin/admin-home/admin-home.component';
+import { AdminProductsComponent } from './Components/Admin/admin-products/admin-products.component';
+import { AdminProductDetailComponent } from './Components/Admin/admin-product-detail/admin-product-detail.component';
+import { UpdateProductComponent } from './Components/Admin/update-product/update-product.component';
+import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,10 @@ import { AdminHomeComponent } from './Components/Admin/admin-home/admin-home.com
     ProductDetailComponent,
     ProductsComponent,
     AdminHomeComponent,
+    AdminProductsComponent,
+    AdminProductDetailComponent,
+    UpdateProductComponent,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,

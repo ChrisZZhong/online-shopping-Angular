@@ -4,11 +4,11 @@ import {ProductService} from "../../../Servies/product.service";
 import {AdminProduct} from "../../../Modules/admin-product";
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  selector: 'app-admin-products',
+  templateUrl: './admin-products.component.html',
+  styleUrls: ['./admin-products.component.css']
 })
-export class ProductsComponent {
+export class AdminProductsComponent {
   constructor(public router: Router, private productService: ProductService) {
   }
   allProducts: AdminProduct[] = [];

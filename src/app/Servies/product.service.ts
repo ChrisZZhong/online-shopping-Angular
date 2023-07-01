@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {map, Observable} from 'rxjs';
+import {AdminProduct} from "../Modules/admin-product";
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
+  product: AdminProduct = new AdminProduct();
 
   constructor(private http:HttpClient) { }
 
@@ -41,4 +43,13 @@ export class ProductService {
   }
 
 
+  editProduct(AdminProduct: any, productId: number) : Observable<any>{
+    return this.http.patch<any>(
+      this.baseUrl + productId, AdminProduct);
+  }
+
+  addProduct(AdminProduct: any) : Observable<any>{
+    return this.http.post<any>(
+      this.baseUrl, AdminProduct);
+  }
 }

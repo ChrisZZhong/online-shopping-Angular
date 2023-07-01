@@ -13,7 +13,7 @@
     </td>
     <td>{{order.datePlaced}}</td>
     <td>{{order.orderStatus}}</td>
-    <a routerLink="/orders/{{order.orderId}}">View</a>
+    <button routerLink="/orders/{{order.orderId}}">View</button>
     <button (click)="cancel(order.orderId)">cancel</button>
   </tr>
 </table>

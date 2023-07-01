@@ -77,7 +77,7 @@ export class AdminHomeComponent {
           alert("Order complete successfully");
           this.allOrders.forEach((order, index) => {
             if (order.orderId === orderId) {
-              order.orderStatus = "Cancelled";
+              order.orderStatus = "Completed";
             }
           });
         } else {

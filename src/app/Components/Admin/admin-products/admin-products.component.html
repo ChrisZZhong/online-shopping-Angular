@@ -1,0 +1,22 @@
+<p>admin-products works!</p>
+<h1>On Sale Products</h1>
+<table>
+  <tr>
+    <th>Product Name</th>
+    <th>price</th>
+    <th>rest quantity</th>
+    <th>description</th>
+  </tr>
+  <tr>
+  <tr *ngFor="let product of allProducts">
+    <td>
+      {{product.name}}
+    </td>
+    <td>{{product.retailPrice}}</td>
+    <td>{{product.quantity}}</td>
+    <td>{{product.description}}</td>
+    <button routerLink="/adminProduct/{{product.productId}}"> View   </button>
+    <button routerLink="/updateProduct/{{product.productId}}"> Edit   </button>
+  </tr>
+  <button routerLink="/addProduct">   add new product </button>
+</table>
