@@ -1,11 +1,12 @@
 import {
+  HttpErrorResponse,
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
-  HttpRequest,
+  HttpRequest, HttpResponse,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {catchError, Observable, throwError} from 'rxjs';
 import {AuthService} from "./auth.service";
 
 @Injectable()
@@ -13,16 +14,19 @@ import {AuthService} from "./auth.service";
 export class InterceptorService implements HttpInterceptor {
   constructor(public auth: AuthService) {}
 
-  intercept(req: HttpRequest<any>, next: HttpHandler):
+  intercept(req: HttpRequest<any>, next: HttpHandler) :
     Observable<HttpEvent<any>> {
-    req = req.clone({
-      setHeaders: {
-        'Content-Type' : 'application/json; charset=utf-8',
-        'Authorization': `Bearer ${localStorage.getItem('token')}`,
-        // 'Access-Control-Allow-Origin': '*',
-      }
-    });
-
+    if (req.method != 'OPTIONS') {
+      const token = 'Bearer ' + localStorage.getItem('token');
+      req = req.clone({
+        setHeaders: {
+          Authorization: token,
+        }
+      });
+    }
+    console.log(req);
     return next.handle(req);
+
   }
+
 }

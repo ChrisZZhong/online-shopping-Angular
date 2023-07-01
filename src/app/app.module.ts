@@ -15,7 +15,6 @@ import { HomeComponent } from './Components/Customer/home/home.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-
   ],
   imports: [
     BrowserModule,

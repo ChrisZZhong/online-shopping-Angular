@@ -11,8 +11,6 @@ export class AuthService {
   baseUrl='http://localhost:8080/login'
   constructor(private http:HttpClient) { }
 
-
-
   loginUser(login:any) : Observable<any>{
     return this.http.post<any>(
       this.baseUrl, login)
