@@ -1,13 +1,14 @@
-<!--<p>home works!</p>-->
-<!--<table>-->
-<!--  <tr>-->
-<!--    <th>OrderId</th>-->
-<!--    <th>datePlaced</th>-->
-<!--    <th>orderStatus</th>-->
-<!--  </tr>-->
-<!--  <tr *ngFor="let order of orders">-->
-<!--    <td>Alfreds Futterkiste</td>-->
-<!--    <td>Maria Anders</td>-->
-<!--    <td>Germany</td>-->
-<!--  </tr>-->
-<!--</table>-->
+<p>home works!</p>
+<table>
+  <tr>
+    <th>OrderId</th>
+    <th>datePlaced</th>
+    <th>orderStatus</th>
+  </tr>
+  <tr>
+  <tr *ngFor="let order of orders">
+    <td>{{order.orderId}}</td>
+    <td>{{order.datePlaced}}</td>
+    <td>{{order.orderStatus}}</td>
+  </tr>
+</table>
