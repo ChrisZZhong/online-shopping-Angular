@@ -6,6 +6,7 @@ import { HomeComponent } from './Components/Customer/home/home.component';
 import {OrderDetailComponent} from "./Components/Customer/order-detail/order-detail.component";
 import {ProductDetailComponent} from "./Components/Customer/product-detail/product-detail.component";
 import {ProductsComponent} from "./Components/Customer/products/products.component";
+import {AdminHomeComponent} from "./Components/Admin/admin-home/admin-home.component";
 
 const routes: Routes = [
   // { path: '**', redirectTo:'home' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'orders/:id', component: OrderDetailComponent},
   { path: 'product/:id', component: ProductDetailComponent},
   { path: 'products', component: ProductsComponent},
+  { path: 'adminHome', component: AdminHomeComponent},
 ];
 
 @NgModule({

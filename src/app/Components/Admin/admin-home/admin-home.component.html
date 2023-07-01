@@ -1,0 +1,88 @@
+<p>admin-home works!</p>
+<h1>All Orders</h1>
+<table>
+  <tr>
+    <th>OrderId</th>
+    <th>UserId</th>
+    <th>datePlaced</th>
+    <th>orderStatus</th>
+  </tr>
+  <tr>
+  <tr *ngFor="let order of allOrders; let key = index">
+    <td>
+      {{order.orderId}}
+    </td>
+    <td>{{order.userId}}</td>
+    <td>{{order.datePlaced}}</td>
+    <td>{{order.orderStatus}}</td>
+    <a routerLink="/orders/{{order.orderId}}">View</a>
+    <button (click)="cancel(order.orderId)" [disabled]="canCancel[key] == false">cancel</button>
+    <button (click)="complete(order.orderId)" [disabled]="canCancel[key] == false">complete</button>
+  </tr>
+</table>
+<h1>top3 profit products</h1>
+<table>
+  <tr>
+    <th>Rank</th>
+    <th>productId</th>
+    <th>ProductName</th>
+    <th>description/th>
+    <th>profit</th>
+  </tr>
+  <tr>
+  <tr *ngFor="let product of profitProducts; let key = index">
+    <td>{{key+1}}</td>
+    <td>
+      {{product.productId}}
+    </td>
+    <td>{{product.name}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.profit}}</td>
+  <a routerLink="/product/{{product.productId}}">View</a>
+  </tr>
+</table>
+
+<h1>top3 popular products</h1>
+<table>
+  <tr>
+    <th>Rank</th>
+    <th>productId</th>
+    <th>ProductName</th>
+    <th>description/th>
+    <th>sales</th>
+  </tr>
+  <tr>
+  <tr *ngFor="let product of popularProducts; let key = index">
+    <td>{{key+1}}</td>
+    <td>
+      {{product.productId}}
+    </td>
+    <td>{{product.productName}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.sales}}</td>
+    <a routerLink="/product/{{product.productId}}">View</a>
+  </tr>
+</table>
+
+<h1>all sold products</h1>
+<table>
+  <tr>
+    <th>Rank</th>
+    <th>productId</th>
+    <th>ProductName</th>
+    <th>description/th>
+    <th>sales</th>
+  </tr>
+  <tr>
+  <tr *ngFor="let product of salesProducts; let key = index">
+    <td>{{key+1}}</td>
+    <td>
+      {{product.productId}}
+    </td>
+    <td>{{product.productName}}</td>
+    <td>{{product.description}}</td>
+    <td>{{product.sales}}</td>
+    <a routerLink="/product/{{product.productId}}">View</a>
+  </tr>
+</table>
+

@@ -29,5 +29,16 @@ export class ProductService {
       this.baseUrl + "all");
   }
 
+  getMostProfitableProducts(limit: any) : Observable<any>{
+    return this.http.get<any>(
+      this.baseUrl + "profit/" +limit);
+  }
+
+  // by sales amount limit = 0 --> all orders
+  getMostPopularProducts(limit: any) : Observable<any>{
+    return this.http.get<any>(
+      this.baseUrl + "popular/" +limit);
+  }
+
 
 }

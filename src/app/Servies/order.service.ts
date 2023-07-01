@@ -26,4 +26,9 @@ export class OrderService {
       this.baseUrl + orderId + "/cancel", null);
   }
 
+  completeOrder(orderId: any) {
+    return this.http.patch(
+      this.baseUrl + orderId + "/complete", null);
+  }
+
 }
