@@ -15,7 +15,7 @@
     <td>{{order.userId}}</td>
     <td>{{order.datePlaced}}</td>
     <td>{{order.orderStatus}}</td>
-    <a routerLink="/orders/{{order.orderId}}">View</a>
+    <button routerLink="/adminOrders/{{order.orderId}}">View</button>
     <button (click)="cancel(order.orderId)" [disabled]="canCancel[key] == false">cancel</button>
     <button (click)="complete(order.orderId)" [disabled]="canCancel[key] == false">complete</button>
   </tr>
@@ -38,7 +38,7 @@
     <td>{{product.name}}</td>
     <td>{{product.description}}</td>
     <td>{{product.profit}}</td>
-  <a routerLink="/product/{{product.productId}}">View</a>
+  <button routerLink="/adminProduct/{{product.productId}}">View</button>
   </tr>
 </table>
 
@@ -60,7 +60,7 @@
     <td>{{product.productName}}</td>
     <td>{{product.description}}</td>
     <td>{{product.sales}}</td>
-    <a routerLink="/product/{{product.productId}}">View</a>
+    <button routerLink="/adminProduct/{{product.productId}}">View</button>
   </tr>
 </table>
 
@@ -82,7 +82,7 @@
     <td>{{product.productName}}</td>
     <td>{{product.description}}</td>
     <td>{{product.sales}}</td>
-    <a routerLink="/product/{{product.productId}}">View</a>
+    <button routerLink="/adminProduct/{{product.productId}}">View</button>
   </tr>
 </table>
 
