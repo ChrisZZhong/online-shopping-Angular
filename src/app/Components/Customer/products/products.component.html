@@ -1,0 +1,16 @@
+<p>products works!</p>
+<h1>On Sale Products</h1>
+<table>
+  <tr>
+    <th>Product Name</th>
+    <th>price</th>
+  </tr>
+  <tr>
+  <tr *ngFor="let product of allProducts">
+    <td>
+      {{product.name}}
+    </td>
+    <td>{{product.retailPrice}}</td>
+    <a routerLink="/product/{{product.productId}}">View</a>
+  </tr>
+</table>

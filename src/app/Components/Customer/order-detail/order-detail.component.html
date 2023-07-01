@@ -1,0 +1,19 @@
+<p>order-detail works!</p>
+<p>OrderId :{{order.orderId}}</p>
+<p>datePlaced : {{order.datePlaced}}</p>
+<p>orderStatus : {{order.orderStatus}}</p>
+<table>
+  <tr>
+    <th>ProductName</th>
+    <th>quantity</th>
+    <th>purchasedPrice</th>
+  </tr>
+  <tr *ngFor="let item of items; let key = index">
+    <td>{{products[key].name}}</td>
+    <td>{{item.quantity}}</td>
+    <td>{{item.purchasedPrice}}</td>
+    <a routerLink="/product/{{products[key].productId}}">View Product</a>
+
+  </tr>
+</table>
+<button (click)="cancel(order.orderId)">cancel order</button>
