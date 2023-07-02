@@ -13,9 +13,10 @@ import {UpdateProductComponent} from "./Components/Admin/update-product/update-p
 import {AddProductComponent} from "./Components/Admin/add-product/add-product.component";
 import {AdminOrderDetailComponent} from "./Components/Admin/admin-order-detail/admin-order-detail.component";
 import {CartComponent} from "./Components/Customer/cart/cart.component";
+import {WatchListComponent} from "./Components/Customer/watch-list/watch-list.component";
 
 const routes: Routes = [
-  // { path: '**', redirectTo:'home' },
+  // { path: '**', redirectTo:'login' },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: RegisterComponent},
   { path: 'home', component: HomeComponent},
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'addProduct', component: AddProductComponent},
   { path: 'adminOrders/:id', component: AdminOrderDetailComponent},
   { path: 'cart', component: CartComponent},
+  { path: 'watchlist', component: WatchListComponent},
 ];
 
 @NgModule({

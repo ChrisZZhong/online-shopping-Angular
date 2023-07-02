@@ -1,0 +1,19 @@
+<p>watch-list works!</p>
+<table>
+  <tr>
+    <th>Product Name</th>
+    <th>description</th>
+    <th>price</th>
+  </tr>
+  <tr>
+  <tr *ngFor="let product of watchList">
+    <td>
+      {{product.name}}
+    </td>
+    <td>{{product.description}}</td>
+    <td>{{product.retailPrice}}</td>
+    <button routerLink="/product/{{product.productId}}">View</button>
+
+    <button (click)="removeFromWatchList(product)">Remove from Wish List</button>
+  </tr>
+</table>

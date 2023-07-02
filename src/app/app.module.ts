@@ -19,6 +19,7 @@ import { AddProductComponent } from './Components/Admin/add-product/add-product.
 import { AdminOrderDetailComponent } from './Components/Admin/admin-order-detail/admin-order-detail.component';
 import { CartComponent } from './Components/Customer/cart/cart.component';
 import { UpdateComponent } from './Components/Customer/products/update/update.component';
+import { WatchListComponent } from './Components/Customer/watch-list/watch-list.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { UpdateComponent } from './Components/Customer/products/update/update.co
     AdminOrderDetailComponent,
     CartComponent,
     UpdateComponent,
+    WatchListComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,5 +16,6 @@
     select amount {{inputValues[key]}}
     <app-update [(value)] = "inputValues[key]"></app-update>
     <button (click)="addToCart(product, inputValues[key])">Add to Cart</button>
+    <button (click)="addToWishList(product)">Add to Wish List</button>
   </tr>
 </table>

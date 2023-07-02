@@ -4,6 +4,7 @@ import {ProductService} from "../../../Servies/product.service";
 import {AdminProduct} from "../../../Modules/admin-product";
 import {CartService} from "../../../Servies/cart.service";
 import {UserProduct} from "../../../Modules/user-product";
+import {WatchListService} from "../../../Servies/watch-list.service";
 
 @Component({
   selector: 'app-products',
@@ -11,10 +12,12 @@ import {UserProduct} from "../../../Modules/user-product";
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent {
-  constructor(public router: Router, private productService: ProductService, public cartService: CartService) {
+  constructor(public router: Router, private productService: ProductService, public cartService: CartService,
+              public watchListService: WatchListService) {
   }
   allProducts: UserProduct[] = [];
   inputValues: number[] = [];
+  responseData : any;
 
 
   ngOnInit(): void {
@@ -28,5 +31,17 @@ export class ProductsComponent {
 
   addToCart(product: UserProduct, quantity: number) {
     this.cartService.addToCart(product, quantity);
+  }
+
+  addToWishList(product: UserProduct) {
+    console.log(product);
+    this.watchListService.addToWishList(product).subscribe((res: any) => {
+      this.responseData = res;
+      if (this.responseData.status == "success") {
+        alert("Product added to watch list successfully!");
+      } else {
+        alert("Product already exists in watch list!");
+      }
+    });
   }
 }
