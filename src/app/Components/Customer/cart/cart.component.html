@@ -1,0 +1,25 @@
+<p>cart works!</p>
+<table>
+  <tr>
+    <th>ProductName</th>
+    <th>Id</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>change amount</th>
+  </tr>
+  <tr *ngFor="let product of cartProducts; let key = index">
+    <td>{{product.name}}</td>
+    <td>{{product.productId}}</td>
+    <td>{{product.quantity}}</td>
+    <td>{{product.retailPrice}}</td>
+    <td>{{inputValues[key]}}</td>
+    <app-update [(value)] = "inputValues[key]"></app-update>
+    <button (click)="changeAmount(product, inputValues[key])">change amount</button>
+    <button (click)="removeProduct(product)">remove product</button>
+  </tr>
+  <button (click)="placeOrder()">place order</button>
+</table>
+
+<p>
+  total price: {{totalPrice}}
+</p>

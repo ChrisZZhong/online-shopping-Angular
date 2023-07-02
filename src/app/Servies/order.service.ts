@@ -31,4 +31,9 @@ export class OrderService {
       this.baseUrl + orderId + "/complete", null);
   }
 
+  placeOrder(order: any) {
+    return this.http.post(
+      this.baseUrl, order);
+  }
+
 }

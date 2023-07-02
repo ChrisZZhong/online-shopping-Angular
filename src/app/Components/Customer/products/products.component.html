@@ -6,11 +6,15 @@
     <th>price</th>
   </tr>
   <tr>
-  <tr *ngFor="let product of allProducts">
+  <tr *ngFor="let product of allProducts; let key = index">
     <td>
       {{product.name}}
     </td>
     <td>{{product.retailPrice}}</td>
-    <a routerLink="/product/{{product.productId}}">View</a>
+    <button routerLink="/product/{{product.productId}}">View</button>
+
+    select amount {{inputValues[key]}}
+    <app-update [(value)] = "inputValues[key]"></app-update>
+    <button (click)="addToCart(product, inputValues[key])">Add to Cart</button>
   </tr>
 </table>

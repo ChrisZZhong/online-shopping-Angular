@@ -12,6 +12,7 @@ import {AdminProductDetailComponent} from "./Components/Admin/admin-product-deta
 import {UpdateProductComponent} from "./Components/Admin/update-product/update-product.component";
 import {AddProductComponent} from "./Components/Admin/add-product/add-product.component";
 import {AdminOrderDetailComponent} from "./Components/Admin/admin-order-detail/admin-order-detail.component";
+import {CartComponent} from "./Components/Customer/cart/cart.component";
 
 const routes: Routes = [
   // { path: '**', redirectTo:'home' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'updateProduct/:id', component: UpdateProductComponent},
   { path: 'addProduct', component: AddProductComponent},
   { path: 'adminOrders/:id', component: AdminOrderDetailComponent},
+  { path: 'cart', component: CartComponent},
 ];
 
 @NgModule({
