@@ -14,23 +14,29 @@ import {AddProductComponent} from "./Components/Admin/add-product/add-product.co
 import {AdminOrderDetailComponent} from "./Components/Admin/admin-order-detail/admin-order-detail.component";
 import {CartComponent} from "./Components/Customer/cart/cart.component";
 import {WatchListComponent} from "./Components/Customer/watch-list/watch-list.component";
+import {AuthGuardService} from "./Servies/auth-guard.service";
+import {UserGuardService} from "./Servies/user-guard.service";
 
 const routes: Routes = [
   // { path: '**', redirectTo:'login' },
-  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo:'login', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent},
   { path: 'signup', component: RegisterComponent},
-  { path: 'home', component: HomeComponent},
-  { path: 'orders/:id', component: OrderDetailComponent},
-  { path: 'product/:id', component: ProductDetailComponent},
-  { path: 'products', component: ProductsComponent},
-  { path: 'adminHome', component: AdminHomeComponent},
-  { path: 'adminProducts', component: AdminProductsComponent},
-  { path: 'adminProduct/:id', component: AdminProductDetailComponent},
-  { path: 'updateProduct/:id', component: UpdateProductComponent},
-  { path: 'addProduct', component: AddProductComponent},
-  { path: 'adminOrders/:id', component: AdminOrderDetailComponent},
-  { path: 'cart', component: CartComponent},
-  { path: 'watchlist', component: WatchListComponent},
+  // user routes
+  { path: 'home', component: HomeComponent, canActivate: [UserGuardService]},
+  { path: 'orders/:id', component: OrderDetailComponent, canActivate: [UserGuardService]},
+  { path: 'product/:id', component: ProductDetailComponent, canActivate: [UserGuardService]},
+  { path: 'products', component: ProductsComponent, canActivate: [UserGuardService]},
+  { path: 'cart', component: CartComponent, canActivate: [UserGuardService]},
+  { path: 'watchlist', component: WatchListComponent, canActivate: [UserGuardService]},
+  // admin routes
+  { path: 'adminHome', component: AdminHomeComponent, canActivate: [AuthGuardService]},
+  { path: 'adminProducts', component: AdminProductsComponent, canActivate: [AuthGuardService]},
+  { path: 'adminProduct/:id', component: AdminProductDetailComponent, canActivate: [AuthGuardService]},
+  { path: 'updateProduct/:id', component: UpdateProductComponent, canActivate: [AuthGuardService]},
+  { path: 'addProduct', component: AddProductComponent, canActivate: [AuthGuardService]},
+  { path: 'adminOrders/:id', component: AdminOrderDetailComponent, canActivate: [AuthGuardService]},
+
 ];
 
 @NgModule({

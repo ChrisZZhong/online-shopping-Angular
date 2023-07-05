@@ -20,7 +20,7 @@ export class WatchListComponent {
   removeFromWatchList(product: UserProduct) {
     this.watchListService.deleteFromWishList(product).subscribe(
       (response) => {
-        console.log(response);
+        alert("Product removed from watch list successfully!");
         this.watchList = this.watchList.filter(item => item.productId !== product.productId);
       });
   }

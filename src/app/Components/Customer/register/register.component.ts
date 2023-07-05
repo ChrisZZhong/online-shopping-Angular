@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import {catchError, of} from "rxjs";
 import { RegisterService } from 'src/app/Servies/register.service';
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -12,7 +13,7 @@ import { RegisterService } from 'src/app/Servies/register.service';
 export class RegisterComponent {
   responseData: any;
 
-  constructor(public registerService: RegisterService) {
+  constructor(public registerService: RegisterService, public router: Router) {
   }
 
   ngOnInit(): void {}
@@ -28,8 +29,8 @@ export class RegisterComponent {
       .pipe(catchError((err) => of([{ err }])))
       .subscribe((response) => {
           this.responseData = response;
-          localStorage.setItem('token', this.responseData.token);
-          console.log(this.responseData.token);
+          alert('You have been registered!');
+          this.router.navigate(['/login']);
         }
       );
   }

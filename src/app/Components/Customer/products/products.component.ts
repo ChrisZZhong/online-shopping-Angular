@@ -30,6 +30,7 @@ export class ProductsComponent {
   }
 
   addToCart(product: UserProduct, quantity: number) {
+    alert("Product added to cart successfully!")
     this.cartService.addToCart(product, quantity);
   }
 

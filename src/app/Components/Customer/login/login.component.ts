@@ -36,8 +36,14 @@ export class LoginComponent {
       .subscribe((response) => {
           this.responseData = response;
           localStorage.setItem('token', this.responseData.token);
-          console.log(this.responseData.token);
-          this.router.navigate(['/home']);
+          localStorage.setItem('admin', this.responseData.isAdmin);
+          alert("Login successfully!");
+          console.log(this.responseData.isAdmin == "true");
+          if (this.responseData.isAdmin) {
+            this.router.navigate(['/adminHome']);
+          } else {
+            this.router.navigate(['/home']);
+          }
       }
     );
   }

@@ -26,11 +26,13 @@ export class CartComponent {
   }
 
   changeAmount(product: CartProduct, quantity: number) {
+    alert("Quantity changed");
     this.cartService.changeAmount(product, quantity);
     this.loadCartProducts();
   }
 
   removeProduct(product: CartProduct) {
+    alert("Product removed");
     this.cartService.removeFromCart(product);
     this.loadCartProducts();
   }

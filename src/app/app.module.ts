@@ -20,6 +20,9 @@ import { AdminOrderDetailComponent } from './Components/Admin/admin-order-detail
 import { CartComponent } from './Components/Customer/cart/cart.component';
 import { UpdateComponent } from './Components/Customer/products/update/update.component';
 import { WatchListComponent } from './Components/Customer/watch-list/watch-list.component';
+import { NavComponent } from './Components/nav/nav.component';
+import {AuthGuardService} from "./Servies/auth-guard.service";
+import {UserGuardService} from "./Servies/user-guard.service";
 
 @NgModule({
   declarations: [
@@ -39,6 +42,7 @@ import { WatchListComponent } from './Components/Customer/watch-list/watch-list.
     CartComponent,
     UpdateComponent,
     WatchListComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +53,8 @@ import { WatchListComponent } from './Components/Customer/watch-list/watch-list.
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
+    AuthGuardService,
+    UserGuardService,
   ],
   bootstrap: [AppComponent]
 })
