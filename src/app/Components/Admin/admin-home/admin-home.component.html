@@ -1,88 +1,119 @@
-<p>admin-home works!</p>
-<h1>All Orders</h1>
-<table>
-  <tr>
-    <th>OrderId</th>
-    <th>UserId</th>
-    <th>datePlaced</th>
-    <th>orderStatus</th>
-  </tr>
-  <tr>
-  <tr *ngFor="let order of allOrders; let key = index">
-    <td>
-      {{order.orderId}}
-    </td>
-    <td>{{order.userId}}</td>
-    <td>{{order.datePlaced}}</td>
-    <td>{{order.orderStatus}}</td>
-    <button routerLink="/adminOrders/{{order.orderId}}">View</button>
-    <button (click)="cancel(order.orderId)" [disabled]="canCancel[key] == false">cancel</button>
-    <button (click)="complete(order.orderId)" [disabled]="canCancel[key] == false">complete</button>
-  </tr>
-</table>
-<h1>top3 profit products</h1>
-<table>
-  <tr>
-    <th>Rank</th>
-    <th>productId</th>
-    <th>ProductName</th>
-    <th>description/th>
-    <th>profit</th>
-  </tr>
-  <tr>
-  <tr *ngFor="let product of profitProducts; let key = index">
-    <td>{{key+1}}</td>
-    <td>
-      {{product.productId}}
-    </td>
-    <td>{{product.name}}</td>
-    <td>{{product.description}}</td>
-    <td>{{product.profit}}</td>
-  <button routerLink="/adminProduct/{{product.productId}}">View</button>
-  </tr>
-</table>
+<h1>Admin Home Page</h1>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">All Orders</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <tr>
+        <th>OrderId</th>
+        <th>UserId</th>
+        <th>datePlaced</th>
+        <th>orderStatus</th>
+        <th>action</th>
+        <th>view</th>
+      </tr>
+      <tr>
+      <tr *ngFor="let order of allOrders; let key = index">
+        <td>
+          {{order.orderId}}
+        </td>
+        <td>{{order.userId}}</td>
+        <td>{{order.datePlaced}}</td>
+        <td>{{order.orderStatus}}</td>
+        <td><button class="btn btn-danger" (click)="cancel(order.orderId)" [disabled]="canCancel[key] == false">cancel</button>
+        <button class="btn btn-primary" (click)="complete(order.orderId)" [disabled]="canCancel[key] == false">complete</button>
+        </td>
+        <td><button class="btn btn-primary" routerLink="/adminOrders/{{order.orderId}}">View</button></td>
+      </tr>
+    </table>
+  </div>
+</div>
 
-<h1>top3 popular products</h1>
-<table>
-  <tr>
-    <th>Rank</th>
-    <th>productId</th>
-    <th>ProductName</th>
-    <th>description/th>
-    <th>sales</th>
-  </tr>
-  <tr>
-  <tr *ngFor="let product of popularProducts; let key = index">
-    <td>{{key+1}}</td>
-    <td>
-      {{product.productId}}
-    </td>
-    <td>{{product.productName}}</td>
-    <td>{{product.description}}</td>
-    <td>{{product.sales}}</td>
-    <button routerLink="/adminProduct/{{product.productId}}">View</button>
-  </tr>
-</table>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">top3 profit products</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <tr>
+        <th>Rank</th>
+        <th>productId</th>
+        <th>ProductName</th>
+        <th>description/th>
+        <th>profit</th>
+        <th>view</th>
+      </tr>
+      <tr>
+      <tr *ngFor="let product of profitProducts; let key = index">
+        <td>{{key+1}}</td>
+        <td>
+          {{product.productId}}
+        </td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.profit}}</td>
+        <td><button class="btn btn-primary" routerLink="/adminProduct/{{product.productId}}">View</button></td>
+      </tr>
+    </table>
+  </div>
+</div>
 
-<h1>all sold products</h1>
-<table>
-  <tr>
-    <th>Rank</th>
-    <th>productId</th>
-    <th>ProductName</th>
-    <th>description/th>
-    <th>sales</th>
-  </tr>
-  <tr>
-  <tr *ngFor="let product of salesProducts; let key = index">
-    <td>{{key+1}}</td>
-    <td>
-      {{product.productId}}
-    </td>
-    <td>{{product.productName}}</td>
-    <td>{{product.description}}</td>
-    <td>{{product.sales}}</td>
-    <button routerLink="/adminProduct/{{product.productId}}">View</button>
-  </tr>
-</table>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">top3 popular products</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <tr>
+        <th>Rank</th>
+        <th>productId</th>
+        <th>ProductName</th>
+        <th>description/th>
+        <th>sales</th>
+        <th>view</th>
+      </tr>
+      <tr>
+      <tr *ngFor="let product of popularProducts; let key = index">
+        <td>{{key+1}}</td>
+        <td>
+          {{product.productId}}
+        </td>
+        <td>{{product.productName}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.sales}}</td>
+        <td><button class="btn btn-primary" routerLink="/adminProduct/{{product.productId}}">View</button></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">all sold products</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <tr>
+        <th>Rank</th>
+        <th>productId</th>
+        <th>ProductName</th>
+        <th>description/th>
+        <th>sales</th>
+        <th>view</th>
+      </tr>
+      <tr>
+      <tr *ngFor="let product of salesProducts; let key = index">
+        <td>{{key+1}}</td>
+        <td>
+          {{product.productId}}
+        </td>
+        <td>{{product.productName}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.sales}}</td>
+        <td><button class="btn btn-primary" routerLink="/adminProduct/{{product.productId}}">View</button></td>
+      </tr>
+    </table>
+  </div>
+</div>
 

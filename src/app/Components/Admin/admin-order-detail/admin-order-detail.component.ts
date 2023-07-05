@@ -35,4 +35,20 @@ export class AdminOrderDetailComponent {
     });
   }
 
+  cancel(orderId: number) {
+    this.orderService.cancelOrder(orderId).subscribe(
+      res=>{
+        this.responseData = res;
+        console.log(this.responseData.status);
+        if(this.responseData.status == "success"){
+          alert("Order cancelled successfully");
+          this.cd.detectChanges();
+          this.order.orderStatus = "Cancelled";
+        }
+        else{
+          alert("Order cancellation failed");
+        }
+      }
+    );
+  }
 }

@@ -1,19 +1,26 @@
-<p>watch-list works!</p>
-<table>
-  <tr>
-    <th>Product Name</th>
-    <th>description</th>
-    <th>price</th>
-  </tr>
-  <tr>
-  <tr *ngFor="let product of watchList">
-    <td>
-      {{product.name}}
-    </td>
-    <td>{{product.description}}</td>
-    <td>{{product.retailPrice}}</td>
-    <button routerLink="/product/{{product.productId}}">View</button>
-
-    <button (click)="removeFromWatchList(product)">Remove from Wish List</button>
-  </tr>
-</table>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">watch List</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <tr>
+        <th>Product Name</th>
+        <th>description</th>
+        <th>price</th>
+        <th>View</th>
+        <th>remove</th>
+      </tr>
+      <tr>
+      <tr *ngFor="let product of watchList">
+        <td>
+          {{product.name}}
+        </td>
+        <td>{{product.description}}</td>
+        <td>{{product.retailPrice}}</td>
+        <td><button class="btn btn-primary" routerLink="/product/{{product.productId}}">View</button></td>
+        <td><button class="btn btn-danger" (click)="removeFromWatchList(product)">Remove from Wish List</button></td>
+      </tr>
+    </table>
+  </div>
+</div>

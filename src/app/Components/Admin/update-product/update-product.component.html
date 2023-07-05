@@ -1,45 +1,50 @@
-<p>update-product works!</p>
-
-<form [formGroup]="productForm">
-  <div>
-    <label>name: </label>
-    <label>{{product.name}}</label>
-    <div><input
-      type="text"
-      placeholder="name"
-      formControlName="name"></div>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Update product</h3>
   </div>
-  <div>
-    <label>description: </label>
-    <label>{{product.description}}</label>
-    <div><input
-      type="text"
-      placeholder="description"
-      formControlName="description"></div>
+  <div class="panel-body">
+    <form [formGroup]="productForm">
+      <div>
+        <label>name: </label>
+        <label>{{product.name}}</label>
+        <div><input
+          type="text"
+          placeholder="name"
+          formControlName="name"></div>
+      </div>
+      <div>
+        <label>description: </label>
+        <label>{{product.description}}</label>
+        <div><input
+          type="text"
+          placeholder="description"
+          formControlName="description"></div>
+      </div>
+      <div>
+        <label>quantity: </label>
+        <label>{{product.quantity}}</label>
+        <div><input
+          type="text"
+          placeholder="quantity"
+          formControlName="quantity"></div>
+      </div>
+      <div>
+        <label>retailPrice: </label>
+        <label>{{product.retailPrice}}</label>
+        <div><input
+          type="text"
+          placeholder="retailPrice"
+          formControlName="retailPrice"></div>
+      </div>
+      <div>
+        <label>wholesalePrice: </label>
+        <label>{{product.wholesalePrice}}</label>
+        <div><input
+          type="text"
+          placeholder="wholesalePrice"
+          formControlName="wholesalePrice"></div>
+      </div>
+      <p><button class="btn btn-primary" (click)="editProduct()" [disabled]="!productForm.value">update</button></p>
+    </form>
   </div>
-  <div>
-    <label>quantity: </label>
-    <label>{{product.quantity}}</label>
-    <div><input
-      type="text"
-      placeholder="quantity"
-      formControlName="quantity"></div>
-  </div>
-  <div>
-    <label>retailPrice: </label>
-    <label>{{product.retailPrice}}</label>
-    <div><input
-      type="text"
-      placeholder="retailPrice"
-      formControlName="retailPrice"></div>
-  </div>
-  <div>
-    <label>wholesalePrice: </label>
-    <label>{{product.wholesalePrice}}</label>
-    <div><input
-      type="text"
-      placeholder="wholesalePrice"
-      formControlName="wholesalePrice"></div>
-  </div>
-  <p><button (click)="editProduct()" [disabled]="!productForm.value">update</button></p>
-</form>
+</div>

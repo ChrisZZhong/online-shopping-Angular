@@ -1,21 +1,32 @@
-<p>products works!</p>
-<h1>On Sale Products</h1>
-<table>
-  <tr>
-    <th>Product Name</th>
-    <th>price</th>
-  </tr>
-  <tr>
-  <tr *ngFor="let product of allProducts; let key = index">
-    <td>
-      {{product.name}}
-    </td>
-    <td>{{product.retailPrice}}</td>
-    <button routerLink="/product/{{product.productId}}">View</button>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3>On Sale Products</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <tr>
+        <th>Product Name</th>
+        <th>price</th>
+        <th>view</th>
+        <th>select amount</th>
+        <th>add to cart</th>
+        <th>add to watchlist</th>
+      </tr>
+      <tr>
+      <tr *ngFor="let product of allProducts; let key = index">
+        <td>
+          {{product.name}}
+        </td>
+        <td>{{product.retailPrice}}</td>
+        <td><button class="btn btn-primary" routerLink="/product/{{product.productId}}">View</button></td>
+        <td>{{inputValues[key]}}
+          <app-update [(value)] = "inputValues[key]"></app-update>
+        </td>
+        <td><button class="btn btn-primary" (click)="addToCart(product, inputValues[key])">Add to Cart</button>
+        </td>
+        <td><button class="btn btn-primary" (click)="addToWishList(product)">Add to Watch List</button></td>
 
-    select amount {{inputValues[key]}}
-    <app-update [(value)] = "inputValues[key]"></app-update>
-    <button (click)="addToCart(product, inputValues[key])">Add to Cart</button>
-    <button (click)="addToWishList(product)">Add to Wish List</button>
-  </tr>
-</table>
+      </tr>
+    </table>
+  </div>
+</div>

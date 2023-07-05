@@ -1,22 +1,30 @@
-<p>admin-products works!</p>
-<h1>On Sale Products</h1>
-<table>
-  <tr>
-    <th>Product Name</th>
-    <th>price</th>
-    <th>rest quantity</th>
-    <th>description</th>
-  </tr>
-  <tr>
-  <tr *ngFor="let product of allProducts">
-    <td>
-      {{product.name}}
-    </td>
-    <td>{{product.retailPrice}}</td>
-    <td>{{product.quantity}}</td>
-    <td>{{product.description}}</td>
-    <button routerLink="/adminProduct/{{product.productId}}"> View   </button>
-    <button routerLink="/updateProduct/{{product.productId}}"> Edit   </button>
-  </tr>
-  <button routerLink="/addProduct">   add new product </button>
-</table>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">All Products</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <tr>
+        <th>Product Name</th>
+        <th>price</th>
+        <th>rest quantity</th>
+        <th>description</th>
+        <th>action</th>
+      </tr>
+      <tr>
+      <tr *ngFor="let product of allProducts">
+        <td>
+          {{product.name}}
+        </td>
+        <td>{{product.retailPrice}}</td>
+        <td>{{product.quantity}}</td>
+        <td>{{product.description}}</td>
+      <td>
+        <button class="btn btn-primary" routerLink="/adminProduct/{{product.productId}}"> View   </button>
+        <button class="btn btn-danger" routerLink="/updateProduct/{{product.productId}}"> Edit   </button>
+      </td>
+      </tr>
+      <button class="btn btn-primary" routerLink="/addProduct">   add new product </button>
+    </table>
+  </div>
+</div>

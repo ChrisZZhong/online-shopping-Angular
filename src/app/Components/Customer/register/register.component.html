@@ -1,15 +1,39 @@
-<form [formGroup]="registerForm">
-  <input
-    type="text"
-    placeholder="Username"
-    formControlName="username">
-  <input
-    type="password"
-    placeholder="Password"
-    formControlName="password">
-  <input
-    type="text"
-    placeholder="Email"
-    formControlName="email">
-  <button (click)="registerSubmit()" [disabled]="!registerForm.valid">Click Me!</button>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container" style="height: 100%;">
+  <form class="form-signin" [formGroup]="registerForm" method="post" action="/login" style="width: 20%; position: absolute; top: 20%; left: 40%;">
+    <h2 class="form-signin-heading">Sign Up</h2>
+    <p>
+      <label class="sr-only">Username</label>
+      <input class="form-control"
+             type="text"
+             placeholder="Username"
+             formControlName="username">
+    </p>
+    <p>
+      <label class="sr-only">Password</label>
+      <input class="form-control"
+             type="password"
+             placeholder="Password"
+             formControlName="password">
+    </p>
+    <p>
+      <label class="sr-only"></label>
+      <input class="form-control"
+        type="text"
+        placeholder="Email"
+        formControlName="email">
+    </p>
+
+    <button class="btn btn-lg btn-primary btn-block" (click)="registerSubmit()" [disabled]="!registerForm.valid">Sign up</button>
+  </form>
+</div>

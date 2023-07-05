@@ -1,24 +1,40 @@
-<p>admin-order-detail works!</p>
-<p>OrderId :{{order.orderId}}</p>
-<p>datePlaced : {{order.datePlaced}}</p>
-<p>orderStatus : {{order.orderStatus}}</p>
-<table>
-  <tr>
-    <th>ItemId</th>
-    <th>ProductName</th>
-    <th>quantity</th>
-    <th>purchasedPrice</th>
-    <th>wholesalePrice</th>
-    <th>orderId</th>
-  </tr>
-  <tr *ngFor="let item of items; let key = index">
-    <td>{{item.itemId}}</td>
-    <td>{{products[key].name}}</td>
-    <td>{{item.quantity}}</td>
-    <td>{{item.purchasedPrice}}</td>
-    <td>{{item.wholesalePrice}}</td>
-    <td>{{item.orderId}}</td>
-    <button routerLink="/adminProduct/{{products[key].productId}}">View Product</button>
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Order Detail</h3>
+    </div>
+    <div class="panel-body">
+      <p>OrderId :{{order.orderId}}</p>
+      <p>datePlaced : {{order.datePlaced}}</p>
+      <p>orderStatus : {{order.orderStatus}}</p>
 
-  </tr>
-</table>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Items</h3>
+        </div>
+        <div class="panel-body">
+          <table class="table table-striped">
+            <tr>
+              <th>ItemId</th>
+              <th>ProductName</th>
+              <th>quantity</th>
+              <th>purchasedPrice</th>
+              <th>wholesalePrice</th>
+              <th>orderId</th>
+            </tr>
+            <tr *ngFor="let item of items; let key = index">
+              <td>{{item.itemId}}</td>
+              <td>{{products[key].name}}</td>
+              <td>{{item.quantity}}</td>
+              <td>{{item.purchasedPrice}}</td>
+              <td>{{item.wholesalePrice}}</td>
+              <td>{{item.orderId}}</td>
+              <button class="btn btn-primary" routerLink="/adminProduct/{{products[key].productId}}">View Product</button>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <button class="btn btn-primary" (click)="cancel(order.orderId)">cancel order</button>
+    </div>
+  </div>
+</div>
